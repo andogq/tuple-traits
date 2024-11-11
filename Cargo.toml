@@ -2,6 +2,10 @@
 name = "tuple-traits"
 version = "0.1.0"
 edition = "2021"
+authors = ["Tom Anderson <tom@ando.gq>"]
+repository = "https://github.com/andogq/tuple-traits"
+license = "MIT"
+description = "Additional tuple traits to enable ergonomic types."
 
 [dev-dependencies]
 static_assertions = "1.1.0"
