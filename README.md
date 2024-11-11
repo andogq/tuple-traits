@@ -14,10 +14,10 @@
 Append a type to a tuple.
 
 ```rust
-assert_type_eq_all!(
-    <(usize, char) as Append>::Append<bool>,
+static_assertions::assert_type_eq_all!(
+    <(usize, char) as tuple_traits::Append>::Append<bool>,
     (usize, char, bool)
-)
+);
 ```
 
 ## [`Cons`](https://docs.rs/tuple-traits/latest/tuple-traits/trait.Cons.html)
@@ -26,8 +26,8 @@ Represent a tuple as a cons (*ish*) value, with the first value on the left, and
 tuple on the right.
 
 ```rust
-assert_impl_all!(
-    (usize, usize, usize): Cons<Left = usize, Right = (usize, usize)>
+static_assertions::assert_impl_all!(
+    (usize, usize, usize): tuple_traits::Cons<Left = usize, Right = (usize, usize)>
 );
 ```
 
@@ -42,7 +42,7 @@ struct C;
 
 fn requires_c<T, Index>(value: T)
 where
-    T: Contains<C, Index>
+    T: tuple_traits::Contains<C, Index>
 {
 }
 
@@ -50,7 +50,7 @@ where
 requires_c((A, B, C));
 
 // Compiler error: `C` does not appear within `(A, B)`
-requires_c((A, B));
+// requires_c((A, B));
 ```
 
 # Example
