@@ -55,4 +55,4 @@ requires_c((A, B, C));
 
 # Example
 
-Check out [`./examples/buffer-flags.rs`](`./examples/buffer-flags.rs`) for a full example!
+Check out [`./examples/buffer-flags.rs`](./examples/buffer-flags.rs) for a full example!
